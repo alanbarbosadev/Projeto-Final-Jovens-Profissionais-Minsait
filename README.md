@@ -23,15 +23,24 @@
  </div>
 </div>
 <br>
+<h2 align="center">Bibliotecas Utilizadas</h2>
+<br>
+<p>- bootstrap [https://getbootstrap.com]</p>
+<p>- ng-bootrap [https://ng-bootstrap.github.io]</p>
+<p>- ngx-filter-pipe [https://www.npmjs.com/package/ngx-filter-pipe]</p>
+<p>- moment.js [https://momentjs.com]</p>
+<br>
+
 <h2 align="center">Sobre o Projeto</h2>
 <p>O projeto tem o intuito de dar suporte ao processo administrativo de uma livraria</p>
 <br>
-<p><b>Funcionalidades</b></p>
+<p><b>Funcionalidades Implementadas</b></p>
 <br>
-<p>- Cadastrar livros</p>
+<p>- Cadastrar livros com devida validação das informações</p>
 <p>- Editar os livros cadastrados</p>
 <p>- Deletar livros cadastrados</p>
 <p>- Listar todos os livros já cadastrados</p>
+<p> - Visualizar detalhes de livros</p>
 <p>- Filtrar os livros pelos campos: título, autor e editora</p>
 <br>
 
