@@ -13,7 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LivrosEditarComponent } from './paginas/livros-editar/livros-editar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipeModule } from 'ngx-filter-pipe';
-import { DetalhesComponent } from './componentes/detalhes/detalhes.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { DetalhesComponent } from './componentes/detalhes/detalhes.component';
     LivrosCrudComponent,
     LivrosCadastroComponent,
     LivrosEditarComponent,
-    DetalhesComponent,
   ],
   imports: [
     BrowserModule,
