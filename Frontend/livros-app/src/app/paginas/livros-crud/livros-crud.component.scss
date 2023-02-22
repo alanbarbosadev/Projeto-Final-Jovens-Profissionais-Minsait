@@ -1,0 +1,27 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.editar {
+  color: black;
+}
+
+.icones-menu {
+  color: var(--primary);
+}
+
+h1 {
+  margin: 15px 0 30px 0;
+  font-size: x-large;
+  border-bottom: 3px solid var(--primary);
+}
+
+th {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.modal-title {
+  border-bottom: 3px solid var(--primary);
+}

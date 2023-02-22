@@ -1,0 +1,93 @@
+<div class="container-fluid"><h1>Editar Livro</h1></div>
+<form [formGroup]="livroFormularioEditar">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <label class="form-label">Título</label>
+        <input type="text" class="form-control" formControlName="titulo" />
+        <div *ngIf="livroFormularioEditar.get('titulo')?.invalid && livroFormularioEditar.get('titulo')?.touched">
+          <small *ngIf="livroFormularioEditar.get('titulo')?.errors?.['required']">Campo obrigatório!</small>
+          <small *ngIf="livroFormularioEditar.get('titulo')?.errors?.['maxLength']">Tamanho máximo de 100 caracteres</small>
+        </div>
+      </div>
+      <div class="col">
+        <label class="form-label">Subtítulo</label>
+        <input type="text" class="form-control" formControlName="subtitulo" />
+        <div *ngIf="livroFormularioEditar.get('subtitulo')?.invalid && livroFormularioEditar.get('subtitulo')?.touched">
+          <small *ngIf="livroFormularioEditar.get('subtitulo')?.errors?.['maxLength']">Tamanho máximo de 100 caracteres</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label class="form-label">Autor(es)</label>
+        <input type="text" class="form-control" formControlName="autor" />
+        <div *ngIf="livroFormularioEditar.get('autor')?.invalid && livroFormularioEditar.get('autor')?.touched">
+          <small *ngIf="livroFormularioEditar.get('autor')?.errors?.['required']">Campo obrigatório</small>
+          <small *ngIf="livroFormularioEditar.get('autor')?.errors?.['maxLength']">Tamanho máximo de 50 caracteres</small>
+        </div>
+      </div>
+      <div class="col">
+        <label class="form-label">Editora</label>
+        <input type="text" class="form-control" formControlName="editora" />
+        <div *ngIf="livroFormularioEditar.get('editora')?.invalid && livroFormularioEditar.get('editora')?.touched">
+          <small *ngIf="livroFormularioEditar.get('editora')?.errors?.['required']">Campo obrigatório</small>
+          <small *ngIf="livroFormularioEditar.get('editora')?.errors?.['maxLength']">Tamanho máximo de 100 caracteres</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label class="form-label">Edição</label>
+        <input type="number" class="form-control" formControlName="edicao" />
+        <div *ngIf="livroFormularioEditar.get('edicao')?.invalid && livroFormularioEditar.get('edicao')?.touched">
+          <small *ngIf="livroFormularioEditar.get('edicao')?.errors?.['maxLength'] || livroFormularioEditar.get('edicao')?.errors?.['max'] || livroFormularioEditar.get('edicao')?.errors?.['min']">A edição deve estar entre 1 e 20</small>
+        </div>
+      </div>
+      <div class="col">
+        <label class="form-label">Número de Páginas</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="quantidadePaginas"
+        />
+        <div *ngIf="livroFormularioEditar.get('quantidadePaginas')?.invalid && livroFormularioEditar.get('quantidadePaginas')?.touched">
+          <small *ngIf="livroFormularioEditar.get('quantidadePaginas')?.errors?.['required']">Campo obrigatório!</small>
+          <small *ngIf="livroFormularioEditar.get('quantidadePaginas')?.errors?.['max']">Número máximo de páginas é 10000</small>
+        </div>
+      </div>
+      <div class="col">
+        <label class="form-label">Data de Publicação</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="dataPublicacao"
+        />
+        <div *ngIf="livroFormularioEditar.get('dataPublicacao')?.invalid && livroFormularioEditar.get('dataPublicacao')?.touched">
+          <small *ngIf="livroFormularioEditar.get('dataPublicacao')?.errors?.['required']">Campo Obrigatório</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <label class="form-label">Resumo</label>
+      <textarea
+        class="form-control"
+        rows="2"
+        formControlName="resumo"
+      ></textarea>
+      <div *ngIf="livroFormularioEditar.get('resumo')?.invalid && livroFormularioEditar.get('resumo')?.touched">
+        <small *ngIf="livroFormularioEditar.get('resumo')?.errors?.['maxLength']">Tamanho máximo de 500 caracteres</small>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" (click)="editarLivro()" [disabled]="!livroFormularioEditar.valid">Editar</button>
+        <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</form>
