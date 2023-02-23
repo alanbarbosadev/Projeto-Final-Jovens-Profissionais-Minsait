@@ -48,11 +48,11 @@
 <br>
 <p><b>Frontend</b></p>
 <br>
-<p>- Com o projeto aberto no Visual Studio Code, digitar o comando [npm install] para instalar todas as dependências necessárias. Feito isso, navegue até o arquivo enviroment.ts e modifique a variável "livrosAPIUrl" com base na URL que sua API irá executar. Por fim, execute o comando [ng serve].</p>
+<p>- Com o projeto aberto no Visual Studio Code, digitar no terminal o comando [npm install] para instalar todas as dependências necessárias. Feito isso, navegue até o arquivo enviroment.ts e modifique a variável "livrosAPIUrl" com base na URL que sua API irá executar. Por fim, execute o comando [ng serve].</p>
 <br>
 <p><b>Backend</b></p>
 <br>
-<p>- Com o projeto aberto no Visual Studio, navegue até o arquivo appsettings.json e modifique a ConnectionString "Default" para o sua conexão local. Por fim, no Package Manager Console, execute o comando update-database e rode a aplicação. Nota: O banco de dados utilizado nesse projeto foi o <b>SQL Server</b></p>
+<p>- Com o projeto aberto no Visual Studio, navegue até o arquivo appsettings.json e modifique a ConnectionString "Default" para a conexão local do seu banco de dados. Por fim, no Package Manager Console, execute o comando update-database e rode a aplicação. Nota 1: Caso a mudança da ConnectionString não seja o suficiente para executar a aplicação com sucesso, digite o comando [add-migration] no Package Manager Console e em seguida [update-database]. Nota 2: O banco de dados utilizado nesse projeto foi o <b>SQL Server</b></p>
 <br>
 <h2 align="center">Imagens</h2>
 <br>
