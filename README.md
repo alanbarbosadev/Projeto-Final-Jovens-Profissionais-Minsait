@@ -23,6 +23,12 @@
  </div>
 </div>
 <br>
+<h2 align="center">Ferramentas Necessárias</h2>
+<br>
+<p>- Visual Studio Code [https://code.visualstudio.com/download]</p>
+<p>- Visual Studio [https://visualstudio.microsoft.com/pt-br/downloads]</p>
+<p>- SQL Server [https://www.microsoft.com/pt-br/sql-server/sql-server-downloads]</p>
+<br>
 <h2 align="center">Bibliotecas Utilizadas</h2>
 <br>
 <p>- bootstrap [https://getbootstrap.com]</p>
