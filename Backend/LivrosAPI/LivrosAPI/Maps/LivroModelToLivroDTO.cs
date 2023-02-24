@@ -4,9 +4,9 @@ using LivrosAPI.Models;
 
 namespace LivrosAPI.Maps
 {
-    public class LivroModelToDTO : Profile
+    public class LivroModelToLivroDTO : Profile
     {
-        public LivroModelToDTO()
+        public LivroModelToLivroDTO()
         {
             CreateMap<Livro, LivroDTO>();
         }      

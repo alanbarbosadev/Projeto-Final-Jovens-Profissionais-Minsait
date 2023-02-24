@@ -27,22 +27,25 @@ namespace LivrosAPI.Controllers
 
         [HttpGet]
         [Route("")]
-        public async Task<ActionResult<LivroDTO[]>> BuscarTodos()
+        public async Task<ActionResult<List<LivroDTO>>> BuscarTodos()
         {
-            var livros = _mapper.Map<LivroDTO[]>(await _repository.BuscarAsync());
+            var livros = await _repository.BuscarAsync();
+            var livrosDTO = _mapper.Map<List<LivroDTO>>(livros);
 
-            return Ok(livros);
+            return Ok(livrosDTO);
         }
 
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult<LivroDTO>> BuscarPorId(Guid id)
         {
-            var livro = _mapper.Map<LivroDTO>(await _repository.BuscarEspecificoAsync(id));
+            var livro = await _repository.BuscarEspecificoAsync(id);
 
             if (livro == null) return NotFound(new { message = "Nenhum livro foi encontrado!" });
 
-            return Ok(livro);
+            var livroDTO = _mapper.Map<LivroDTO>(livro);
+
+            return Ok(livroDTO);
         }
 
         [HttpPost]
@@ -51,18 +54,18 @@ namespace LivrosAPI.Controllers
         {
             var validation = new LivroDTOValidation().Validate(livroDTO);
 
-            if (!validation.IsValid) return BadRequest(new { message = "Dados inválidos! "});
+            if (!validation.IsValid) return BadRequest(new { message = "Dados inválidos!" });
 
             try
             {
                 var livro = _mapper.Map<Livro>(livroDTO);
                 await _repository.AdicionarLivroAsync(livro);
 
-                return (livro);
+                return Ok(livro);
             }
             catch (Exception)
             {
-                return BadRequest(new { message = "A operação falhou!" });
+                return BadRequest(new { message = "Livro já cadastrado anteriormente!" });
             }
         }
 
@@ -72,7 +75,7 @@ namespace LivrosAPI.Controllers
         {
             var validation = new LivroDTOValidation().Validate(livroDTO);
 
-            if (!validation.IsValid) return BadRequest(new { message = "Dados inválidos! "});
+            if (!validation.IsValid) return BadRequest(new { message = "Dados inválidos!" });
 
             var livro = _mapper.Map<Livro>(livroDTO);
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QQ8MzuxKhJHa/tHUPj0uDExOz9pNBBj8J+CA4UG/fAMRDPRrXT15N1usJET+61mVL1RwB8NiCBvkKm9/+8uVmw==",
+  "dgSpecHash": "3DYA8YdJiIR7nmI21SMgI/p+KRFUZJ8Ed1Fq2Sn8lzH1mfVgCZ5RRHKgnFqDNNag/EHJKKC8f7f/RaT5GW333Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alan0\\OneDrive\\Área de Trabalho\\LivrosAPP\\Jovens-Profissionais-Minsait\\backend\\LivrosAPI\\LivrosAPI\\LivrosAPI.csproj",
+  "projectFilePath": "C:\\Users\\alan0\\OneDrive\\Área de Trabalho\\MinsaitFinal\\Projeto-Final-Jovens-Profissionais-Minsait\\Backend\\LivrosAPI\\LivrosAPI\\LivrosAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alan0\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\alan0\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
