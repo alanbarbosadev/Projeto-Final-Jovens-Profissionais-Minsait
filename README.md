@@ -23,11 +23,16 @@
  </div>
 </div>
 <br>
+<h2 align="center">Ferramentas Necessárias</h2>
+<br>
+<p>- Visual Studio Code [https://code.visualstudio.com/download]</p>
+<p>- Visual Studio [https://visualstudio.microsoft.com/pt-br/downloads]</p>
+<p>- SQL Server [https://www.microsoft.com/pt-br/sql-server/sql-server-downloads]</p>
+<br>
 <h2 align="center">Bibliotecas Utilizadas</h2>
 <br>
 <p>- bootstrap [https://getbootstrap.com]</p>
 <p>- ng-bootrap [https://ng-bootstrap.github.io]</p>
-<p>- ngx-filter-pipe [https://www.npmjs.com/package/ngx-filter-pipe]</p>
 <p>- moment.js [https://momentjs.com]</p>
 <br>
 
