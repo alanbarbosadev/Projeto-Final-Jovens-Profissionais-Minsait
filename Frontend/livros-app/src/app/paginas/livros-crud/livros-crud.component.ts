@@ -15,11 +15,9 @@ export class LivrosCrudComponent implements OnInit {
   public id: string = '';
   public page: number = 1;
   public pageSize: number = 5;
-  public filtro: any = {
-    titulo: '',
-    autor: '',
-    editora: '',
-  };
+  public filtroPorTitulo!: string;
+  public filtroPorAutor!: string;
+  public filtroPorEditora!: string;
   public filtragem!: string;
   public closeResult: any = '';
   public livroFormularioDetalhes: FormGroup;
@@ -52,14 +50,45 @@ export class LivrosCrudComponent implements OnInit {
   deletar(livroDTO: LivroDTO): void {
     const id = livroDTO.id?.toString()!;
     this.livroService.deletar(id).subscribe(() => {
-      this.livroService.lerTodos().subscribe((livrosDTO) => {
-        this.livrosDTO = livrosDTO;
-      });
+      this.ngOnInit();
     });
   }
 
   filtroSelecionado(value: string): void {
     this.filtragem = value;
+  }
+
+  filtrarPorTitulo(): void {
+    if(this.filtroPorTitulo == ''){
+      this.ngOnInit();
+    }
+    else {
+      this.livrosDTO = this.livrosDTO.filter((livrosFiltrados) => {
+        return livrosFiltrados.titulo.toLocaleLowerCase().match(this.filtroPorTitulo.toLocaleLowerCase());
+      })
+    }
+  }
+
+  filtrarPorAutor(): void {
+    if(this.filtroPorAutor == ''){
+      this.ngOnInit();
+    }
+    else {
+      this.livrosDTO = this.livrosDTO.filter((livrosFiltrados) => {
+        return livrosFiltrados.autor.toLocaleLowerCase().match(this.filtroPorAutor.toLocaleLowerCase());
+      })
+    }
+  }
+
+  filtrarPorEditora(): void {
+    if(this.filtroPorEditora == ''){
+      this.ngOnInit();
+    }
+    else {
+      this.livrosDTO = this.livrosDTO.filter((livrosFiltrados) => {
+        return livrosFiltrados.editora.toLocaleLowerCase().match(this.filtroPorEditora.toLocaleLowerCase());
+      })
+    }
   }
 
   detalhar(livroDTO: LivroDTO): void {

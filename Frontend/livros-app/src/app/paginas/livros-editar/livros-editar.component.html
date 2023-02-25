@@ -2,7 +2,7 @@
 <form [formGroup]="livroFormularioEditar">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-md-6">
         <label class="form-label">Título</label>
         <input type="text" class="form-control" formControlName="titulo" />
         <div *ngIf="livroFormularioEditar.get('titulo')?.invalid && livroFormularioEditar.get('titulo')?.touched">
@@ -10,7 +10,7 @@
           <small *ngIf="livroFormularioEditar.get('titulo')?.errors?.['maxLength']">Tamanho máximo de 100 caracteres</small>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-6">
         <label class="form-label">Subtítulo</label>
         <input type="text" class="form-control" formControlName="subtitulo" />
         <div *ngIf="livroFormularioEditar.get('subtitulo')?.invalid && livroFormularioEditar.get('subtitulo')?.touched">
@@ -20,7 +20,7 @@
     </div>
 
     <div class="row">
-      <div class="col">
+      <div class="col-md-6">
         <label class="form-label">Autor(es)</label>
         <input type="text" class="form-control" formControlName="autor" />
         <div *ngIf="livroFormularioEditar.get('autor')?.invalid && livroFormularioEditar.get('autor')?.touched">
@@ -28,7 +28,7 @@
           <small *ngIf="livroFormularioEditar.get('autor')?.errors?.['maxLength']">Tamanho máximo de 50 caracteres</small>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-6">
         <label class="form-label">Editora</label>
         <input type="text" class="form-control" formControlName="editora" />
         <div *ngIf="livroFormularioEditar.get('editora')?.invalid && livroFormularioEditar.get('editora')?.touched">
@@ -39,14 +39,14 @@
     </div>
 
     <div class="row">
-      <div class="col">
+      <div class="col-md-4">
         <label class="form-label">Edição</label>
         <input type="number" class="form-control" formControlName="edicao" />
         <div *ngIf="livroFormularioEditar.get('edicao')?.invalid && livroFormularioEditar.get('edicao')?.touched">
           <small *ngIf="livroFormularioEditar.get('edicao')?.errors?.['maxLength'] || livroFormularioEditar.get('edicao')?.errors?.['max'] || livroFormularioEditar.get('edicao')?.errors?.['min']">A edição deve estar entre 1 e 20</small>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-4">
         <label class="form-label">Número de Páginas</label>
         <input
           type="number"
@@ -58,7 +58,7 @@
           <small *ngIf="livroFormularioEditar.get('quantidadePaginas')?.errors?.['max']">Número máximo de páginas é 10000</small>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-4">
         <label class="form-label">Data de Publicação</label>
         <input
           type="date"
@@ -74,7 +74,7 @@
     <div class="row">
       <label class="form-label">Resumo</label>
       <textarea
-        class="form-control"
+        class="form-control mx-2"
         rows="2"
         formControlName="resumo"
       ></textarea>

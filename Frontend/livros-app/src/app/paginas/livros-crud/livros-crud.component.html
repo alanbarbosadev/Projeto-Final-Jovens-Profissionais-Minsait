@@ -14,14 +14,14 @@
   </div>
 
   <div class="col-8" *ngIf="filtragem == 'titulo'">
-    <input class="form-control" type="text" [(ngModel)]="filtro.titulo" />
+    <input class="form-control" type="text" [(ngModel)]="filtroPorTitulo" (ngModelChange)="filtrarPorTitulo()"/>
   </div>
 
   <div class="col-7" *ngIf="filtragem == 'autor'">
-    <input class="form-control" type="text" [(ngModel)]="filtro.autor" />
+    <input class="form-control" type="text" [(ngModel)]="filtroPorAutor" (ngModelChange)="filtrarPorAutor()"/>
   </div>
   <div class="col-7" *ngIf="filtragem == 'editora'">
-    <input class="form-control" type="text" [(ngModel)]="filtro.editora" />
+    <input class="form-control" type="text" [(ngModel)]="filtroPorEditora" (ngModelChange)="filtrarPorEditora()"/>
   </div>
 </div>
 
@@ -39,13 +39,12 @@
       *ngFor="
         let livroDTO of livrosDTO
           | slice : (page - 1) * pageSize : page * pageSize
-          | filterBy : filtro
       "
     >
       <td>{{ livroDTO.titulo }}</td>
       <td>{{ livroDTO.autor }}</td>
       <td>{{ livroDTO.editora }}</td>
-      <td>
+      <td class="text-center">
         <div>
           <button class="btn me-2" (click)="open(content) ; detalhar(livroDTO)">
             <i class="bi bi-search icones-menu"></i>

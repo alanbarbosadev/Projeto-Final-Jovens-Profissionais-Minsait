@@ -52,9 +52,9 @@ namespace LivrosAPI.Controllers
         [Route("")]
         public async Task<ActionResult<Livro>> CadastrarLivro([FromBody] LivroDTO livroDTO)
         {
-            var validation = new LivroDTOValidation().Validate(livroDTO);
+            var validacao = new LivroDTOValidation().Validate(livroDTO);
 
-            if (!validation.IsValid) return BadRequest(new { message = "Dados inválidos!" });
+            if (!validacao.IsValid) return BadRequest(new { message = "Dados inválidos!" });
 
             try
             {
@@ -65,7 +65,7 @@ namespace LivrosAPI.Controllers
             }
             catch (Exception)
             {
-                return BadRequest(new { message = "Livro já cadastrado anteriormente!" });
+                return BadRequest(new { message = "A operação falhou!" });
             }
         }
 
@@ -73,9 +73,9 @@ namespace LivrosAPI.Controllers
         [Route("{id}")]
         public async Task<ActionResult<Livro>> AtualizarLivro([FromBody] LivroDTO livroDTO, Guid id)
         {
-            var validation = new LivroDTOValidation().Validate(livroDTO);
+            var validacao = new LivroDTOValidation().Validate(livroDTO);
 
-            if (!validation.IsValid) return BadRequest(new { message = "Dados inválidos!" });
+            if (!validacao.IsValid) return BadRequest(new { message = "Dados inválidos!" });
 
             var livro = _mapper.Map<Livro>(livroDTO);
 
