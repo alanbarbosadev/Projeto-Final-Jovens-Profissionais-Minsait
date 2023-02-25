@@ -33,7 +33,6 @@
 <br>
 <p>- bootstrap [https://getbootstrap.com]</p>
 <p>- ng-bootrap [https://ng-bootstrap.github.io]</p>
-<p>- ngx-filter-pipe [https://www.npmjs.com/package/ngx-filter-pipe]</p>
 <p>- moment.js [https://momentjs.com]</p>
 <br>
 
